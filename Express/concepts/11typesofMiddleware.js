@@ -4,10 +4,11 @@ const morgan = require('morgan')
 const logger = require('./9logger')
 const authorize = require('./10authorize')
 
-//NOTE we have 3 types of middleware 
+//NOTE we have 4 types of middleware 
 // 1. built in middleware
 // 2. custom middleware
 // 3. third party middleware
+// 4. error handling middleware (GLOBAL MIDDLEWARE)
 
 // 1. built in middleware Example :
 // app.use(express.static('./public'))

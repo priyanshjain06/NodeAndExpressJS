@@ -14,6 +14,7 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { 'content-type': 'text/html' })
     res.write('<h1>about page</h1>')
     res.end()
+    res._final("the value for the")
   }
   // 404
   else {

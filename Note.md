@@ -52,7 +52,7 @@ It basically ,based on the concept of ` offloading`
 
 Node.js uses the event loop to handle ` I/O operations` (like reading files, making HTTP requests, etc.) asynchronously, allowing the program to continue executing other code while waiting for these operations to complete.
 
-It is the heart of Node.js's `single-threaded architecture`, managing the execution of callbacks and non-blocking tasks.
+It is the heart of Node.js's single-threaded architecture, managing the execution of `callbacks and non-blocking tasks.`
 
 IN SHORT, The event loop in Node.js is a mechanism that allows non-blocking, asynchronous operations to be executed efficiently.
 

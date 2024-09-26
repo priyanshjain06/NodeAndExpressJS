@@ -7,7 +7,7 @@ let { people } = require('./data')
 
 //NOTE In Express.js express.urlencoded() is a middleware that parses incoming request bodies containing URL-encoded data (i.e., data from HTML form submissions using form action keyword in html ) .
 
-
+ 
 //NOTE express.urlencoded  => This middleware parses URL-encoded data and puts the parsed data into req.body.
 
 
