@@ -3,7 +3,7 @@ const authorize = (req, res, next) => {
 
     if(user==='priyansh') {
         req.user={ name: 'priyansh', id: 1}
-        next()
+        next() //REVIEW - 
     }
     else
     {

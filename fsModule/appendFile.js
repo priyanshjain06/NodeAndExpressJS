@@ -23,16 +23,6 @@ try {
     console.error('Error appending data:', err);
 }
 
-
-//used to delete any file
-fs.unlink('../first.txt', (err)=>{
-if(err) {
-    console.log(err)
-} else {
-    console.log('file deleted')
-}
-})
-
 //used to rename specific file
 fs.renameSync('text.txt','example.txt')
 // text.txt is renamed to example.txt

@@ -12,7 +12,7 @@ To explore or install npm utilities, visit the [npm website](https://www.npmjs.c
 
 `installation process `
 
-npm i express --save
+npm i express --save -g
 
 always use save  to recover the node modules 
 

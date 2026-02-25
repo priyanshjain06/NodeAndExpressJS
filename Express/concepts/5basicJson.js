@@ -4,7 +4,7 @@ const app = express()
 const { products } = require('../data')
 
 app.get('/', (req, res) => {
-  res.json(products)
+  res.json(products) //convert the object to json
 })
 
 app.listen(5000, () => {

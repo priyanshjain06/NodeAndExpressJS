@@ -5,9 +5,9 @@ const app = express()
 
 // setup static and middleware
 // static is a method which does not have to be changed
-app.use(express.static('./public'))
+app.use(express.static('./public')) //REVIEW - 
           
-app.get('/', (req, res) => {
+app.get('/', (req, res) => { //REVIEW - 
   res.sendFile(path.resolve(__dirname, '../navbar-app/index.html'))
 })
 

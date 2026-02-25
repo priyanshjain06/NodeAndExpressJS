@@ -4,12 +4,9 @@ let { people } = require('./data')
 
 //NOTE in order to send post data we need a tool called postman
 
-
 //NOTE In Express.js express.urlencoded() is a middleware that parses incoming request bodies containing URL-encoded data (i.e., data from HTML form submissions using form action keyword in html ) .
 
- 
 //NOTE express.urlencoded  => This middleware parses URL-encoded data and puts the parsed data into req.body.
-
 
 //NOTE - This option controls how the URL-encoded data is parsed:
 
@@ -21,7 +18,7 @@ let { people } = require('./data')
 // static assets
 app.use(express.static('./methods-public'))
 // parse incoming request form data
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: false })) //REVIEW - 
 // parse json
 app.use(express.json())
 
@@ -47,7 +44,7 @@ app.post('/api/postman/people', (req, res) => {
       .status(400)
       .json({ success: false, msg: 'please provide name value' })
   }
-  res.status(201).json({ success: true, data: [...people, name] })
+  res.status(201).json({ success: true, data: [...people, name] }) //REVIEW -  merge people with name here
 })
 
 //NOTE it runs after the user logs in  and req.body is used to acces the data submitted by user it contains all the data captured by  form html
@@ -74,7 +71,7 @@ app.put('/api/people/:id', (req, res) => {
       .json({ success: false, msg: `no person with id ${id}` })
   }
 
-  const newPeople = people.map((person) => {
+  const newPeople = people.map((person) => { //REVIEW - 
     if (person.id === Number(id)) {
       person.name = name
     }
@@ -91,7 +88,7 @@ app.delete('/api/people/:id', (req, res) => {
       .status(404)
       .json({ success: false, msg: `no person with id ${req.params.id}` })
   }
-  const newPeople = people.filter(
+  const newPeople = people.filter( //REVIEW - 
     (person) => person.id !== Number(req.params.id)
   )
   return res.status(200).json({ success: true, data: newPeople })

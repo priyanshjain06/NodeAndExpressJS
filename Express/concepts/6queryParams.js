@@ -9,20 +9,18 @@ app.get("/", (req, res) => {
 app.get("/api/products", (req, res) => {
   const newProducts = products.map((product) => {
     const { id, name, image } = product;
-    return { id, name, image };q
+    return { id, name, image };
   });
 
   res.json(newProducts);
 });
 
-//Query Params :productID
-app.get("/api/products/:productID", (req, res) =>
- {
-
+//Query Params :productID //REVIEW -
+app.get("/api/products/:productID", (req, res) => {
   // console.log(req)
   // console.log(req.params)
 
-  const { productID } = req.params;
+  const { productID } = req.params; //REVIEW  object destructuring
 
   const singleProduct = products.find(
     (product) => product.id === Number(productID)
@@ -35,32 +33,27 @@ app.get("/api/products/:productID", (req, res) =>
   return res.json(singleProduct);
 });
 
-app.get("/api/products/:productID/reviews/:reviewID", (req, res) =>
-{
-
+app.get("/api/products/:productID/reviews/:reviewID", (req, res) => {
   console.log(req.params);
   res.send("hello world");
-
 });
 
 //NOTE -  Query String : req.query
 
 app.get("/api/v1/query", (req, res) => {
-
   // console.log(req.query);
-  
-  const { search, limit } = req.query;
-  let sortedProducts = [...products];
+
+  const { search, limit } = req.query; //REVIEW -
+  let sortedProducts = [...products]; //REVIEW -  we are copying the array to avoid modifying the original array
 
   if (search) {
-    sortedProducts = sortedProducts.filter((product) =>
-    {
-      return product.name.startsWith(search);
+    sortedProducts = sortedProducts.filter((product) => { //REVIEW - 
+      return product.name.startsWith(search); //REVIEW - 
     });
   }
 
   if (limit) {
-    sortedProducts = sortedProducts.slice(0, Number(limit));
+    sortedProducts = sortedProducts.slice(0, Number(limit)); //REVIEW 
   }
 
   if (sortedProducts.length < 1) {
@@ -69,16 +62,16 @@ app.get("/api/v1/query", (req, res) => {
   }
 
   res.status(200).json(sortedProducts);
-
 });
 
 app.listen(5000, () => {
   console.log("Server is listening on port 5000....");
 });
 
-//NOTE: you cannot send two status is a single request 
+//REVIEW -
+//NOTE: you cannot send two status is a single request
 // res.status(200).send('hello world')
 // res.status(201).send('hello world')
 // res.status(201).json({message: 'success'})
-//NOTE only one of them will be sent which meets the condition first 
-// not all will be sent 
+//NOTE only one of them will be sent which meets the condition first
+// not all will be sent

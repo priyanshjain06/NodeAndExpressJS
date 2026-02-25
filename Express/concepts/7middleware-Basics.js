@@ -20,6 +20,7 @@ const app = express()
 // app.use (logger)
 
 //app.use
+//REVIEW - Moves request to next middleware or handler
 const logger = (req, res, next) => {
   const method = req.method
   const url = req.url
@@ -28,13 +29,15 @@ const logger = (req, res, next) => {
   next()
 }
 
-app.get('/', logger, (req, res) => {
+app.get('/', logger, (req, res) => { 
   res.send('Home')
 })
 
 app.get('/about', logger, (req, res) => {
   res.send('About')
 })
+
+//REVIEW FLOW middleware home middleware about
 
 app.listen(5000, () => {
   console.log('Server is listening on port 5000....')

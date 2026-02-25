@@ -1,5 +1,4 @@
 const http = require('http')
-
 const server = http.createServer((req, res) => {
   // console.log(req.method)
   const url = req.url
@@ -14,7 +13,7 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { 'content-type': 'text/html' })
     res.write('<h1>about page</h1>')
     res.end()
-    res._final("the value for the")
+    res._final("the value for the") //REVIEW not a good practice 
   }
   // 404
   else {
@@ -24,4 +23,4 @@ const server = http.createServer((req, res) => {
   }
 })
 
-server.listen(5000)
+server.listen(5000) 
