@@ -26,5 +26,3 @@ try {
 //used to rename specific file
 fs.renameSync('text.txt','example.txt')
 // text.txt is renamed to example.txt
-
-
