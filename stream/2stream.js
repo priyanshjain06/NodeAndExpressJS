@@ -9,8 +9,7 @@ const { createReadStream } = require('fs')
 
 const stream = createReadStream('./content/big.txt')
 
-s})
-stream.on('error', (err) => console.log(err))tream.on('data', (result) => {
+stream.on('error', (err) => console.log(err))stream.on('data', (result) => {
   console.log(result)
-
+}
 
