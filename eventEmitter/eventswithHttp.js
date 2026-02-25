@@ -22,7 +22,7 @@ server.on('request',() => {
 })
 
 setTimeout(()=> {
-    server.close()
+    server.close() //REVIEW -   no event but method function
 },10000)
 
 server.on('close',() =>{
