@@ -15,6 +15,7 @@ const {
 // router.put('/:id', updatePerson)
 // router.delete('/:id', deletePerson)
 
+//REVIEW -  method chaining ! 
 router.route('/').get(getPeople).post(createPerson)
 router.route('/postman').post(createPersonPostman)
 router.route('/:id').put(updatePerson).delete(deletePerson)
