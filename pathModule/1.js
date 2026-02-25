@@ -1,6 +1,6 @@
 const path = require('path')
 
-console.log(path.sep) // gives /
+console.log(path.sep) //REVIEW  gives /
 
 const filePath = path.join('/content/', 'subfolder','path.txt')
 console.log(filePath)
