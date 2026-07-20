@@ -10,4 +10,4 @@ console.log(base)
 // gives file name in this case
 
 const absolute = path.resolve(__dirname, 'content', 'subfolder', 'path.txt')
-console.log(absolute)
+console.log(absolute) //REVIEW 
